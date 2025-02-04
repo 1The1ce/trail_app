@@ -84,3 +84,68 @@ class CalendarItem extends StatelessWidget {
     );
   }
 }
+
+class CalendarWidget extends StatelessWidget {
+  const CalendarWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 45,
+      width: 63,
+      decoration: BoxDecoration(
+        color: Colors.grey,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "1 Kun",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 15,
+                    fontFamily: "Urbanist"),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "14okt",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 10,
+                    fontFamily: "Urbanist"),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CalendarWidgetsGroup extends StatelessWidget {
+  const CalendarWidgetsGroup({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      spacing: 9,
+      children: [
+        CalendarWidget(),
+        CalendarWidget(),
+        CalendarWidget(),
+        CalendarWidget(),
+        CalendarWidget(),
+      ],
+    );
+  }
+}
+

@@ -4,7 +4,7 @@ import 'package:trail_app/Travel/presentation/widgets/Bonus_widget.dart';
 import 'package:trail_app/Travel/presentation/widgets/Calendar_widget.dart';
 import 'package:trail_app/Travel/presentation/widgets/Captions.dart';
 
-class SearchList extends StatelessWidget {
+class SearchListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
