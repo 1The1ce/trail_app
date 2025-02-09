@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:trail_app/Travel/presentation/widgets/Hider_widget.dart';
+import 'package:trail_app/Travel/presentation/widgets/Captions.dart';
 
 class OptionsWidget extends StatelessWidget {
   const OptionsWidget({super.key});
@@ -7,27 +9,31 @@ class OptionsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Positioned(
-              left: 25,
-              child: Column(
+        SizedBox(
+          width: 300,
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Positioned(
+                left: 20,
+                child: Column(
+                  children: [
+                    Container(height: 400, width: 1, color: Colors.grey)
+                  ],
+                ),
+              ),
+              Column(
+                spacing: 90,
                 children: [
-                  Container(height: 400, width: 1, color: Colors.grey)
+                  SvgPicture.asset("TravelAssets/icons/AirPlane.svg"),
+                  SvgPicture.asset("TravelAssets/icons/Frame46.svg"),
+                  SvgPicture.asset("TravelAssets/icons/Frame49.svg"),
                 ],
               ),
-            ),
-            Column(
-              spacing: 90,
-              children: [
-                SvgPicture.asset("TravelAssets/icons/AirPlane.svg"),
-                SvgPicture.asset("TravelAssets/icons/Frame46.svg"),
-                SvgPicture.asset("TravelAssets/icons/Frame49.svg"),
-              ],
-            ),
-          ],
+            ],
+          ),
         ),
       ],
     );
@@ -35,10 +41,11 @@ class OptionsWidget extends StatelessWidget {
 }
 
 class OptionsExpanded extends StatelessWidget {
-  const OptionsExpanded(
-      {super.key,
-      required this.title,
-      required this.time,});
+  const OptionsExpanded({
+    super.key,
+    required this.title,
+    required this.time,
+  });
 
   final String title, time;
 
@@ -47,8 +54,8 @@ class OptionsExpanded extends StatelessWidget {
     return Positioned(
       left: 85,
       child: Container(
-        width: 248,
-        height: 128,
+        width: 284,
+        height: 109,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
@@ -97,13 +104,15 @@ class OptionsExpanded extends StatelessWidget {
 }
 
 class OptionsExpFlight extends StatelessWidget {
-  const OptionsExpFlight({super.key,
+  const OptionsExpFlight({
+    super.key,
     required this.title,
     required this.time,
     required this.info,
     required this.place,
     required this.info2,
-    required this.place2,});
+    required this.place2,
+  });
 
   final String title, time, info, place, info2, place2;
 
@@ -112,8 +121,8 @@ class OptionsExpFlight extends StatelessWidget {
     return Positioned(
       left: 85,
       child: Container(
-        width: 248,
-        height: 128,
+        width: 284,
+        height: 109,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
@@ -215,18 +224,20 @@ class OptionsExpFlight extends StatelessWidget {
 }
 
 class OptionsExpHotel extends StatelessWidget {
-  const OptionsExpHotel(
-      {super.key,
-        required this.title,
-        required this.time,});
+  const OptionsExpHotel({
+    super.key,
+    required this.title,
+    required this.time,
+    required this.route_legth,
+  });
 
-  final String title, time;
+  final String title, time, route_legth;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 248,
-      height: 128,
+      width: 284,
+      height: 109,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
@@ -263,10 +274,56 @@ class OptionsExpHotel extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-
                 ],
               ),
-
+              Row(
+                spacing: 5,
+                children: [
+                  Image(
+                    image: AssetImage("TravelAssets/images/places/museum.png"),
+                    height: 68,
+                  ),
+                  Column(
+                    children: [
+                      Row(
+                        spacing: 10,
+                        children: [
+                          Tour_place(place: "New Madina Hotel"),
+                          SvgPicture.asset(
+                            "TravelAssets/icons/map-pin.svg",
+                            height: 11,
+                          ),
+                          Text(
+                            route_legth,
+                            style: TextStyle(
+                              fontFamily: "Urbanist",
+                              fontSize: 10,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 166,
+                            child: Text(
+                              softWrap: true,
+                              "New Madinah mehmonxonasining har bir xonasida vanna va xalat bilan jihozlangan shaxsiy ... ",
+                              style: TextStyle(
+                                fontFamily: "Urbanist",
+                                fontSize: 8,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      HiderWidget(),
+                    ],
+                  ),
+                ],
+              ),
             ],
           ),
         ],

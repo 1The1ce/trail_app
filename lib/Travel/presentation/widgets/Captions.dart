@@ -83,3 +83,19 @@ class Tour_type extends StatelessWidget {
         ));
   }
 }
+
+class Tour_place extends StatelessWidget {
+  const Tour_place({super.key, required this.place});
+
+  final String place;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(place, style: TextStyle(
+        color: Color(0xffC4C4C4),
+        fontWeight: FontWeight.w600,
+        fontSize: 10,
+        fontFamily: "Urbanist"),);
+  }
+}
+
