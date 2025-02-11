@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trail_app/Travel/presentation/pages/HomePage.dart';
-import 'package:trail_app/Travel/presentation/pages/Onboarding_view.dart';
+import 'package:trail_app/Travel/presentation/pages/Register_Login_Page.dart';
 import 'Travel/presentation/pages/Searchlist.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnboardingView(),
+      home: RegisterLoginPage(),
     );
   }
 }
